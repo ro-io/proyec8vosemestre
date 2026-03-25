@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -42,7 +43,6 @@
     </button>
   </nav>
 
-  <!-- MENÚ MÓVIL -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="#inicio" class="mobile-link">Inicio</a></li>
@@ -55,7 +55,6 @@
     </ul>
   </div>
 
-  <!-- SECCIÓN HERO / INICIO -->
   <section class="hero" id="inicio">
     <div class="hero-bg-text">IDE</div>
     <div class="hero-content">
@@ -111,7 +110,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN SERVICIOS -->
   <section class="services" id="servicios">
     <div class="container">
       <div class="section-header">
@@ -174,7 +172,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN SOBRE NOSOTROS -->
   <section class="about" id="nosotros">
     <div class="container">
       <div class="about-grid">
@@ -203,7 +200,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN PORTAFOLIO / PROYECTOS -->
   <section class="portfolio" id="proyectos">
     <div class="container">
       <div class="section-header">
@@ -240,7 +236,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN CONTACTO -->
   <section class="contact" id="contacto">
     <div class="container">
       <div class="section-header">
@@ -270,7 +265,8 @@
             <div class="team-member"><span class="team-dot"></span><div><strong>Sebastian Néstor Sumi Bolívar</strong><span>Desarrollador</span></div></div>
           </div>
         </div>
-        <form class="contact-form" id="contactForm">
+
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xaqlwlye" method="POST">
           <div class="form-row">
             <div class="form-group"><label for="nombre">Nombre completo</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required/></div>
             <div class="form-group"><label for="empresa">Institución / Empresa</label><input type="text" id="empresa" name="empresa" placeholder="Tu institución"/></div>
@@ -288,16 +284,20 @@
           </div>
           <div class="form-group"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea></div>
           <button type="submit" class="btn-submit">
-            <span>Enviar mensaje</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <span>Registrase</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
           </button>
-          <div class="form-success" id="formSuccess">✓ Mensaje enviado. Nos pondremos en contacto pronto.</div>
+          <div class="form-success" id="formSuccess" style="display: none;">
+            ✓ Mensaje enviado. Nos pondremos en contacto pronto.
+          </div>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-top">
@@ -325,13 +325,34 @@
           </ul>
         </div>
         <div class="footer-links-group">
-          <h4>Acceso</h4>
+<h4>Acceso</h4>
           <ul>
             <li><a href="login.html">Login</a></li>
             <li><a href="registro.html">Registrarse</a></li>
-            <li>+591 78994035</li>
-            <li>Wara · Rodrigo · Sebastian</li>
           </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <div class="social-container">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>
+                <a href="https://www.google.com/maps/search/?api=1&query=EMI+Irpavi+La+Paz+Bolivia" target="_blank" style="text-decoration: none; color: inherit;">
+                  EMI-Unidad Académica La Paz
+                </a>
+              </span>
+            </div>
+            <a href="https://wa.me/59178994035" target="_blank" class="social-button whatsapp">
+              <i class="fab fa-whatsapp"></i>
+              <span>+591 78994035</span>
+            </a>
+            <div class="social-icons">
+              <a href="TU_LINK_INSTAGRAM" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="TU_LINK_FACEBOOK" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="TU_LINK_LINKEDIN" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <a>Wara · Rodrigo · Sebastian</a>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
@@ -341,5 +362,38 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("formSuccess");
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const data = new FormData(event.target);
+      
+      const response = await fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        successMessage.style.display = "block";
+        form.reset();
+      } else {
+        alert("Huy, hubo un problema al enviar. Inténtalo de nuevo.");
+      }
+    }
+
+    form.addEventListener("submit", handleSubmit);
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

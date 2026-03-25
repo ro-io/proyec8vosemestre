@@ -1243,3 +1243,46 @@ section { padding: 6rem 0; }
   transition: background var(--transition);
 }
 .modal-btn:hover { background: var(--gold); border-color: var(--gold); }
+.social-container {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #2d6b44; /* Color WhatsApp */
+  color:rgba(247,244,239,0.55);
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s;
+  width: fit-content;
+}
+
+.social-button:hover {
+  transform: scale(1.05);
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 24px;
+}
+
+.social-icons a {
+  color: #333;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff; /* Color al pasar el mouse */
+}
+
+.contact-item i {
+  margin-right: 8px;
+  color: rgba(247,244,239,0.55);
+}
