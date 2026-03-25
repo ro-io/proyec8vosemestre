@@ -1,0 +1,317 @@
+/* ===================================================
+   IDE — Auth Pages (login.html / registro.html)
+   =================================================== */
+
+body.auth-page {
+  background: var(--cream);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── NAVBAR en páginas auth ── */
+.navbar.scrolled {
+  border-bottom: 1px solid var(--cream-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+/* ── LAYOUT PRINCIPAL ── */
+.auth-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 65px);
+  margin-top: 65px;
+}
+
+/* ── LADO IZQUIERDO ── */
+.auth-left {
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-brand {
+  position: relative;
+  z-index: 2;
+}
+
+.auth-acronym {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+}
+
+.auth-tagline {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.3;
+}
+
+.auth-tagline em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.auth-deco {
+  position: absolute;
+  bottom: -0.1em;
+  right: -0.05em;
+  font-family: var(--font-display);
+  font-size: 11rem;
+  font-weight: 600;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(184,151,90,0.15);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── LADO DERECHO ── */
+.auth-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: var(--cream);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-header {
+  margin-bottom: 2.5rem;
+}
+
+.auth-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.auth-title {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.auth-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.auth-sub {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  line-height: 1.65;
+}
+
+/* ── FORMULARIO ── */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-password {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-password input {
+  width: 100%;
+  padding-right: 3rem !important;
+}
+
+.toggle-pass {
+  position: absolute;
+  right: 0.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  transition: color var(--transition);
+}
+
+.toggle-pass:hover { color: var(--gold); }
+.toggle-pass svg { width: 18px; height: 18px; }
+
+/* ── BOTÓN PRINCIPAL AUTH ── */
+.btn-auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.btn-auth svg { width: 16px; height: 16px; transition: transform var(--transition); }
+.btn-auth:hover { background: var(--gold); border-color: var(--gold); }
+.btn-auth:hover svg { transform: translateX(4px); }
+.btn-auth:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ── MENSAJES ── */
+.auth-error {
+  display: none;
+  font-size: 0.82rem;
+  color: #c0392b;
+  padding: 0.7rem 1rem;
+  background: rgba(192,57,43,0.07);
+  border: 1px solid rgba(192,57,43,0.2);
+  margin-top: 0.25rem;
+}
+
+.auth-switch {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+.auth-switch a {
+  color: var(--gold);
+  font-weight: 500;
+  transition: opacity var(--transition);
+}
+
+.auth-switch a:hover { opacity: 0.7; }
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26,24,20,0.55);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-box {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  transform: translateY(20px);
+  transition: transform 0.35s ease;
+  border-top: 3px solid var(--gold);
+}
+
+.modal-overlay.active .modal-box {
+  transform: translateY(0);
+}
+
+.modal-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.modal-icon.error { color: #c0392b; }
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.modal-msg {
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.modal-btn {
+  padding: 0.7rem 2rem;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.modal-btn:hover { background: var(--gold); border-color: var(--gold); }
+
+/* ── BOTONES NAVBAR en auth ── */
+.nav-register {
+  padding: 0.45rem 1.1rem !important;
+  border: 1px solid var(--gold) !important;
+  color: var(--gold) !important;
+  font-size: 0.78rem !important;
+  transition: background var(--transition), color var(--transition) !important;
+}
+
+.nav-register:hover {
+  background: var(--gold) !important;
+  color: var(--cream) !important;
+}
+
+.nav-register::after { display: none !important; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .auth-main { grid-template-columns: 1fr; }
+  .auth-left { display: none; }
+  .auth-right { padding: 2rem 1.5rem; align-items: flex-start; padding-top: 3rem; }
+  .auth-card { max-width: 100%; }
+  .auth-title { font-size: 2rem; }
+}

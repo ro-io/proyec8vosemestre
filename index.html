@@ -11,6 +11,16 @@
 </head>
 <body>
 
+  <!-- MODAL DE NOTIFICACIÓN -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <div class="modal-icon" id="modalIcon">✓</div>
+      <h3 class="modal-title" id="modalTitle">¡Éxito!</h3>
+      <p class="modal-msg" id="modalMsg">Operación completada.</p>
+      <button class="modal-btn" id="modalBtn">Aceptar</button>
+    </div>
+  </div>
+
   <!-- NAVEGACIÓN -->
   <nav class="navbar" id="navbar">
     <div class="nav-logo">
@@ -23,7 +33,9 @@
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="registro.html" class="nav-register">Registrarse</a></li>
+      <li><a href="login.html" class="nav-login">Login</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menú">
       <span></span><span></span><span></span>
@@ -38,13 +50,14 @@
       <li><a href="#nosotros" class="mobile-link">Nosotros</a></li>
       <li><a href="#proyectos" class="mobile-link">Proyectos</a></li>
       <li><a href="#contacto" class="mobile-link">Contacto</a></li>
+      <li><a href="registro.html" class="mobile-link mobile-register">Registrarse</a></li>
+      <li><a href="login.html" class="mobile-link mobile-login">Login</a></li>
     </ul>
   </div>
 
   <!-- SECCIÓN HERO / INICIO -->
   <section class="hero" id="inicio">
     <div class="hero-bg-text">IDE</div>
-
     <div class="hero-content">
       <p class="hero-eyebrow reveal">Ingeniería Digital Empresarial — La Paz, Bolivia</p>
       <h1 class="hero-title reveal">
@@ -60,7 +73,6 @@
         <a href="#proyectos" class="btn-ghost">Ver proyectos →</a>
       </div>
     </div>
-
     <div class="hero-badges reveal">
       <div class="hero-badge">
         <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4">
@@ -93,7 +105,6 @@
         Consultoría TI
       </div>
     </div>
-
     <div class="hero-scroll">
       <span>Scroll</span>
       <div class="scroll-line"></div>
@@ -110,78 +121,50 @@
           <h2 class="section-title">Nuestros <em>Servicios</em></h2>
         </div>
       </div>
-
       <div class="services-grid">
         <div class="service-card reveal-card">
           <div class="service-icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="8" width="32" height="22" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M13 36h14M20 30v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M10 16l4 4-4 4M18 24h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <svg viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="22" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M13 36h14M20 30v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 16l4 4-4 4M18 24h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3>Desarrollo de Software</h3>
           <p>Sistemas a medida diseñados para optimizar sus operaciones empresariales con tecnología de vanguardia.</p>
           <a href="#contacto" class="service-link">Saber más →</a>
         </div>
-
         <div class="service-card reveal-card">
           <div class="service-icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M6 20h28M20 6c-4 4-6 9-6 14s2 10 6 14M20 6c4 4 6 9 6 14s-2 10-6 14" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
+            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.5"/><path d="M6 20h28M20 6c-4 4-6 9-6 14s2 10 6 14M20 6c4 4 6 9 6 14s-2 10-6 14" stroke="currentColor" stroke-width="1.5"/></svg>
           </div>
           <h3>Aplicaciones Web</h3>
           <p>Plataformas digitales responsivas y de alto rendimiento que conectan su negocio con el mundo.</p>
           <a href="#contacto" class="service-link">Saber más →</a>
         </div>
-
         <div class="service-card reveal-card">
           <div class="service-icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="6" width="16" height="28" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <rect x="18" y="10" width="14" height="22" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="16" cy="30" r="1.5" fill="currentColor"/>
-            </svg>
+            <svg viewBox="0 0 40 40" fill="none"><rect x="8" y="6" width="16" height="28" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="18" y="10" width="14" height="22" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="30" r="1.5" fill="currentColor"/></svg>
           </div>
           <h3>Apps Móviles</h3>
           <p>Aplicaciones nativas y multiplataforma que llevan su empresa a la palma de la mano de sus clientes.</p>
           <a href="#contacto" class="service-link">Saber más →</a>
         </div>
-
         <div class="service-card reveal-card">
           <div class="service-icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 14l12-8 12 8v14l-12 8-12-8V14z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M8 14l12 8 12-8M20 22v14" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
+            <svg viewBox="0 0 40 40" fill="none"><path d="M8 14l12-8 12 8v14l-12 8-12-8V14z" stroke="currentColor" stroke-width="1.5"/><path d="M8 14l12 8 12-8M20 22v14" stroke="currentColor" stroke-width="1.5"/></svg>
           </div>
           <h3>Bases de Datos</h3>
           <p>Arquitectura y gestión de datos empresariales con seguridad, integridad y eficiencia garantizadas.</p>
           <a href="#contacto" class="service-link">Saber más →</a>
         </div>
-
         <div class="service-card reveal-card">
           <div class="service-icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 4l14 7v10c0 7-6 13-14 15C12 34 6 28 6 21V11L20 4z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <svg viewBox="0 0 40 40" fill="none"><path d="M20 4l14 7v10c0 7-6 13-14 15C12 34 6 28 6 21V11L20 4z" stroke="currentColor" stroke-width="1.5"/><path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3>Ciberseguridad</h3>
           <p>Protección integral de activos digitales, auditorías de seguridad y sistemas de defensa proactiva.</p>
           <a href="#contacto" class="service-link">Saber más →</a>
         </div>
-
         <div class="service-card reveal-card">
           <div class="service-icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <rect x="22" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <rect x="13" y="26" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M11 20v3h18v-3M20 23v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
+            <svg viewBox="0 0 40 40" fill="none"><rect x="4" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="22" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="13" y="26" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M11 20v3h18v-3M20 23v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <h3>Consultoría TI</h3>
           <p>Asesoría estratégica en transformación digital, arquitectura de sistemas e innovación tecnológica.</p>
@@ -199,57 +182,21 @@
           <span class="section-number">02</span>
           <p class="section-label">Quiénes somos</p>
           <h2 class="section-title">Sobre <em>Nosotros</em></h2>
-          <p class="about-desc">
-            IDE es un equipo de estudiantes universitarios con una visión clara: desarrollar sistemas de información que resuelvan problemas reales. Combinamos el rigor académico con la práctica del desarrollo de software moderno.
-          </p>
-          <p class="about-desc">
-            Creemos que desde la universidad es posible construir soluciones tecnológicas de calidad profesional. Cada proyecto que emprendemos es una oportunidad de aprender, innovar y dejar huella.
-          </p>
+          <p class="about-desc">IDE es un equipo de estudiantes universitarios con una visión clara: desarrollar sistemas de información que resuelvan problemas reales. Combinamos el rigor académico con la práctica del desarrollo de software moderno.</p>
+          <p class="about-desc">Creemos que desde la universidad es posible construir soluciones tecnológicas de calidad profesional. Cada proyecto que emprendemos es una oportunidad de aprender, innovar y dejar huella.</p>
           <a href="#contacto" class="btn-primary">Contáctanos</a>
         </div>
-
         <div class="about-right">
           <div class="stats-grid">
-            <div class="stat-item reveal-card">
-              <span class="stat-number">1</span>
-              <span class="stat-label">Proyecto en desarrollo</span>
-            </div>
-            <div class="stat-item reveal-card">
-              <span class="stat-number">3</span>
-              <span class="stat-label">Desarrolladores</span>
-            </div>
-            <div class="stat-item reveal-card">
-              <span class="stat-number">100</span>
-              <span class="stat-label">% Compromiso académico</span>
-            </div>
-            <div class="stat-item reveal-card">
-              <span class="stat-number">6</span>
-              <span class="stat-label">Tecnologías aplicadas</span>
-            </div>
+            <div class="stat-item reveal-card"><span class="stat-number">1</span><span class="stat-label">Proyecto en desarrollo</span></div>
+            <div class="stat-item reveal-card"><span class="stat-number">3</span><span class="stat-label">Desarrolladores</span></div>
+            <div class="stat-item reveal-card"><span class="stat-number">100</span><span class="stat-label">% Compromiso académico</span></div>
+            <div class="stat-item reveal-card"><span class="stat-number">6</span><span class="stat-label">Tecnologías aplicadas</span></div>
           </div>
-
           <div class="values-list">
-            <div class="value-item">
-              <span class="value-dot"></span>
-              <div>
-                <strong>Formación aplicada</strong>
-                <p>Llevamos los conocimientos universitarios a proyectos con impacto real y medible.</p>
-              </div>
-            </div>
-            <div class="value-item">
-              <span class="value-dot"></span>
-              <div>
-                <strong>Trabajo en equipo</strong>
-                <p>Tres desarrolladores con roles complementarios, unidos por el mismo objetivo.</p>
-              </div>
-            </div>
-            <div class="value-item">
-              <span class="value-dot"></span>
-              <div>
-                <strong>Innovación con propósito</strong>
-                <p>Usamos tecnologías modernas para resolver problemas concretos de nuestra ciudad.</p>
-              </div>
-            </div>
+            <div class="value-item"><span class="value-dot"></span><div><strong>Formación aplicada</strong><p>Llevamos los conocimientos universitarios a proyectos con impacto real y medible.</p></div></div>
+            <div class="value-item"><span class="value-dot"></span><div><strong>Trabajo en equipo</strong><p>Tres desarrolladores con roles complementarios, unidos por el mismo objetivo.</p></div></div>
+            <div class="value-item"><span class="value-dot"></span><div><strong>Innovación con propósito</strong><p>Usamos tecnologías modernas para resolver problemas concretos de nuestra ciudad.</p></div></div>
           </div>
         </div>
       </div>
@@ -266,14 +213,13 @@
           <h2 class="section-title">Proyectos <em>Destacados</em></h2>
         </div>
       </div>
-
       <div class="portfolio-grid portfolio-single">
         <div class="portfolio-item large reveal-card">
           <div class="portfolio-img portfolio-img-1"></div>
           <div class="portfolio-info">
             <span class="portfolio-tag">Sistema de Información Geográfica · En Desarrollo</span>
             <h3>SIG para la Planificación y Toma de Decisiones en la Selección de Establecimientos de Entretenimiento Nocturno en La Paz</h3>
-            <p>Proyecto universitario que integra tecnología de información geográfica (GIS) para analizar, visualizar y apoyar la toma de decisiones en la localización de establecimientos de entretenimiento nocturno en la ciudad de La Paz. El sistema permite cruzar variables espaciales, demográficas y normativas para generar recomendaciones fundamentadas.</p>
+            <p>Proyecto universitario que integra tecnología de información geográfica (GIS) para analizar, visualizar y apoyar la toma de decisiones en la localización de establecimientos de entretenimiento nocturno en la ciudad de La Paz.</p>
             <div class="portfolio-badges">
               <span class="portfolio-badge">GIS / Mapas</span>
               <span class="portfolio-badge">Análisis espacial</span>
@@ -283,13 +229,9 @@
             <a href="#contacto" class="portfolio-link">Contactar al equipo →</a>
           </div>
         </div>
-
         <div class="portfolio-coming reveal-card">
           <div class="coming-icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3"/>
-              <path d="M20 12v8l5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
+            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3"/><path d="M20 12v8l5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <p class="coming-label">Próximos proyectos</p>
           <p class="coming-desc">Estamos en constante desarrollo. Nuevos sistemas se sumarán a medida que avancemos en nuestra formación.</p>
@@ -308,69 +250,32 @@
           <h2 class="section-title">¿Listo para <em>comenzar</em>?</h2>
         </div>
       </div>
-
       <div class="contact-grid">
         <div class="contact-info">
-          <p class="contact-intro">
-            ¿Tienes una idea o proyecto en mente? Somos estudiantes universitarios abiertos a colaborar, recibir retroalimentación y explorar nuevos desafíos tecnológicos.
-          </p>
+          <p class="contact-intro">¿Tienes una idea o proyecto en mente? Somos estudiantes universitarios abiertos a colaborar, recibir retroalimentación y explorar nuevos desafíos tecnológicos.</p>
           <div class="contact-details">
             <div class="contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               <span>La Paz, Bolivia</span>
             </div>
             <div class="contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.29 6.29l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.29 6.29l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
               <span>+591 78994035</span>
             </div>
           </div>
-
           <div class="team-list">
             <p class="team-title">Equipo desarrollador</p>
-            <div class="team-member">
-              <span class="team-dot"></span>
-              <div>
-                <strong>Wara Rocío Huañapaco Laura</strong>
-                <span>Desarrolladora</span>
-              </div>
-            </div>
-            <div class="team-member">
-              <span class="team-dot"></span>
-              <div>
-                <strong>Rodrigo Aguilar Sandoval</strong>
-                <span>Desarrollador</span>
-              </div>
-            </div>
-            <div class="team-member">
-              <span class="team-dot"></span>
-              <div>
-                <strong>Sebastian Néstor Sumi Bolívar</strong>
-                <span>Desarrollador</span>
-              </div>
-            </div>
+            <div class="team-member"><span class="team-dot"></span><div><strong>Wara Rocío Huañapaco Laura</strong><span>Desarrolladora</span></div></div>
+            <div class="team-member"><span class="team-dot"></span><div><strong>Rodrigo Aguilar Sandoval</strong><span>Desarrollador</span></div></div>
+            <div class="team-member"><span class="team-dot"></span><div><strong>Sebastian Néstor Sumi Bolívar</strong><span>Desarrollador</span></div></div>
           </div>
         </div>
-
         <form class="contact-form" id="contactForm">
           <div class="form-row">
-            <div class="form-group">
-              <label for="nombre">Nombre completo</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required/>
-            </div>
-            <div class="form-group">
-              <label for="empresa">Institución / Empresa</label>
-              <input type="text" id="empresa" name="empresa" placeholder="Tu institución"/>
-            </div>
+            <div class="form-group"><label for="nombre">Nombre completo</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required/></div>
+            <div class="form-group"><label for="empresa">Institución / Empresa</label><input type="text" id="empresa" name="empresa" placeholder="Tu institución"/></div>
           </div>
-          <div class="form-group">
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required/>
-          </div>
+          <div class="form-group"><label for="email">Correo electrónico</label><input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required/></div>
           <div class="form-group">
             <label for="servicio">Motivo de contacto</label>
             <select id="servicio" name="servicio">
@@ -381,20 +286,13 @@
               <option>Otro</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
-          </div>
+          <div class="form-group"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea></div>
           <button type="submit" class="btn-submit">
             <span>Enviar mensaje</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
-          <div class="form-success" id="formSuccess">
-            ✓ Mensaje enviado. Nos pondremos en contacto pronto.
-          </div>
+          <div class="form-success" id="formSuccess">✓ Mensaje enviado. Nos pondremos en contacto pronto.</div>
+        </form>
       </div>
     </div>
   </section>
@@ -427,9 +325,21 @@
           </ul>
         </div>
         <div class="footer-links-group">
-          <h4>Contacto</h4>
+          <h4>Acceso</h4>
           <ul>
-            <li>La Paz, Bolivia</li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registro.html">Registrarse</a></li>
             <li>+591 78994035</li>
             <li>Wara · Rodrigo · Sebastian</li>
           </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Ingeniería Digital Empresarial — IDE. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

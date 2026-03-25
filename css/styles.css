@@ -1077,3 +1077,169 @@ section { padding: 6rem 0; }
   .section-number { font-size: 2.5rem; }
   .navbar { padding: 1rem 1.5rem; }
 }
+
+/* ===================================================
+   NAVBAR — Botones Login y Registrarse
+   =================================================== */
+.nav-register {
+  padding: 0.45rem 1.1rem !important;
+  border: 1px solid var(--gold) !important;
+  color: var(--gold) !important;
+  font-size: 0.78rem !important;
+  transition: background var(--transition), color var(--transition) !important;
+}
+.nav-register:hover {
+  background: var(--gold) !important;
+  color: var(--cream) !important;
+}
+.nav-register::after { display: none !important; }
+
+.nav-login {
+  padding: 0.45rem 1.1rem !important;
+  background: var(--ink) !important;
+  color: var(--cream) !important;
+  font-size: 0.78rem !important;
+  transition: background var(--transition) !important;
+}
+.nav-login:hover {
+  background: var(--gold) !important;
+  color: var(--cream) !important;
+}
+.nav-login::after { display: none !important; }
+
+/* ===================================================
+   MODAL DE NOTIFICACIÓN
+   =================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26,24,20,0.55);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal-box {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  transform: translateY(20px);
+  transition: transform 0.35s ease;
+  border-top: 3px solid var(--gold);
+}
+.modal-overlay.active .modal-box {
+  transform: translateY(0);
+}
+.modal-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+.modal-icon.error { color: #c0392b; }
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+.modal-msg {
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+.modal-btn {
+  padding: 0.7rem 2rem;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.modal-btn:hover { background: var(--gold); border-color: var(--gold); }
+
+.nav-register {
+  padding: 0.45rem 1.1rem !important;
+  border: 1px solid var(--gold) !important;
+  color: var(--gold) !important;
+  font-size: 0.78rem !important;
+  transition: background var(--transition), color var(--transition) !important;
+}
+.nav-register:hover { background: var(--gold) !important; color: var(--cream) !important; }
+.nav-register::after { display: none !important; }
+
+.nav-login {
+  padding: 0.45rem 1.1rem !important;
+  background: var(--ink) !important;
+  color: var(--cream) !important;
+  font-size: 0.78rem !important;
+  transition: background var(--transition) !important;
+}
+.nav-login:hover { background: var(--gold) !important; color: var(--cream) !important; }
+.nav-login::after { display: none !important; }
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26,24,20,0.55);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.modal-overlay.active { opacity: 1; pointer-events: all; }
+.modal-box {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  transform: translateY(20px);
+  transition: transform 0.35s ease;
+  border-top: 3px solid var(--gold);
+}
+.modal-overlay.active .modal-box { transform: translateY(0); }
+.modal-icon { font-size: 2.5rem; margin-bottom: 1rem; color: var(--gold); }
+.modal-icon.error { color: #c0392b; }
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+.modal-msg { font-size: 0.88rem; color: var(--ink-light); line-height: 1.65; margin-bottom: 1.5rem; }
+.modal-btn {
+  padding: 0.7rem 2rem;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.modal-btn:hover { background: var(--gold); border-color: var(--gold); }
