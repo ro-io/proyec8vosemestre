@@ -1,0 +1,5 @@
+# Busca esto en la pestaña "Data API"
+NEXT_PUBLIC_SUPABASE_URL=https://ykglvigimympyvglomji.supabase.co
+
+# Esta es la "Publishable key" de tu captura de pantalla
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_XLjq2ldDyX0HSLKB5pOj1g_0auY0uBp
